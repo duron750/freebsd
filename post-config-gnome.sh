@@ -4,8 +4,8 @@
 
 test $? -eq 0 || exit 1 "NEED TO BE ROOT TO RUN THIS"
 
-echo "Welcome to BSD-XFCE base script"
-echo "This will install a complete, secure and optimized XFCE desktop in your FreeBSD system"
+echo "Welcome to BSD-GNOME base script"
+echo "This will install a complete, secure and optimized GNOME desktop in your FreeBSD system"
 echo "WARNING!! - Execute only in a fresh vanilla installation"
 sleep 5
 
