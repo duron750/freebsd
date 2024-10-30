@@ -1,3 +1,5 @@
+vim
+mc
 atril-lite
 automount
 baobab
@@ -43,5 +45,3 @@ xfce
 xfce4-pulseaudio-plugin
 xfce4-screenshooter-plugin
 xorg
-lightdm
-lightdm-gtw-greeter

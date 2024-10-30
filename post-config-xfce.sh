@@ -42,7 +42,6 @@ sysrc hostname="freebsd"
 sysrc moused_enable="YES"
 sysrc dbus_enable="YES"
 sysrc update_motd="NO"
-sysrc lightdm_enable="YES"
 echo ""
 
 ## CHANGE SLIM THEME TO FBSD

@@ -1,3 +1,5 @@
+vim
+mc
 atril-lite
 automount
 exfat-utils
@@ -31,3 +33,5 @@ vlc
 wget
 xorg
 gnome
+lightdm
+lightdm-gtw-greeter
