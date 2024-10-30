@@ -31,12 +31,16 @@ echo ""
 xargs pkg install -y < system_packages_gnome
 
 
-echo 'proc                    /proc           procfs  rw              0       0' >> /etc/fstab
+echo 'proc	/proc	procfs	rw	0	0' >> /etc/fstab
+
 ## ENABLES BASIC SYSTEM SERVICES
 echo "Enabling basic services"
 sysrc hostname="freebsd"
 sysrc moused_enable="YES"
 sysrc dbus_enable="YES"
+sysrc gdm_enable="YES"
+sysrc gnome_enable="YES"
+sysrc hald_enable="YES"
 sysrc gdm_enable="YES"
 sysrc lightdm_enable="YES"
 echo ""
@@ -45,16 +49,16 @@ echo ""
 sed -i '' 's/current_theme       default/current_theme       fbsd/g' /usr/local/etc/slim.conf
 
 ## CREATES .xinitrc SCRIPT FOR A REGULAR DESKTOP USER
-echo ; read -p "Want to enable XFCE for a regular user? (yes/no): " X;
+echo ; read -p "Want to enable GNOME for a regular user? (yes/no): " X;
 echo ""
-if [ "$X" = "yes" ]
-then
-    echo ; read -p "For what user? " user;
-    touch /usr/home/$user/.xinitrc
-    echo 'exec xfce4-session' >> /usr/home/$user/.xinitrc
-    echo ""
-    echo "$user enabled"
-else fi
+#if [ "$X" = "yes" ]
+#then
+#    echo ; read -p "For what user? " user;
+#    touch /usr/home/$user/.xinitrc
+#    echo 'exec xfce4-session' >> /usr/home/$user/.xinitrc
+#    echo ""
+#    echo "$user enabled"
+#else fi
 
 
 ## ADDS USER TO CORE GROUPS
