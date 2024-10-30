@@ -47,30 +47,31 @@ sed -i '' 's/current_theme       default/current_theme       fbsd/g' /usr/local/
 ## CREATES .xinitrc SCRIPT FOR A REGULAR DESKTOP USER
 echo ; read -p "Want to enable GNOME for a regular user? (yes/no): " X;
 echo ""
-#if [ "$X" = "yes" ]
-#then
-#    echo ; read -p "For what user? " user;
+if [ "$X" = "yes" ]
+then
+    echo ; read -p "For what user? " user;
 #    touch /usr/home/$user/.xinitrc
 #    echo 'exec xfce4-session' >> /usr/home/$user/.xinitrc
 #    echo ""
 #    echo "$user enabled"
 #else fi
 
+    ## ADDS USER TO CORE GROUPS
+    echo "Adding $user to video/realtime/wheel/operator groups"
+    pw groupmod video -m $user
+    pw groupmod audio -m $user
+    pw groupmod realtime -m $user
+    pw groupmod wheel -m $user
+    pw groupmod operator -m $user
+    pw groupmod network -m $user
+    echo ""
 
-## ADDS USER TO CORE GROUPS
-echo "Adding $user to video/realtime/wheel/operator groups"
-pw groupmod video -m $user
-pw groupmod audio -m $user
-pw groupmod realtime -m $user
-pw groupmod wheel -m $user
-pw groupmod operator -m $user
-pw groupmod network -m $user
-echo ""
+    ## ADDS USER TO SUDOERS
+    echo "Adding $user to sudo"
+    sed -i '/%wheel/s/^#//g' /usr/local/etc/sudoers
+    echo ""
 
-## ADDS USER TO SUDOERS
-echo "Adding $user to sudo"
-echo "$user ALL=(ALL:ALL) ALL" >> /usr/local/etc/sudoers
-echo ""
+fi
 
 ## ENABLES LINUX COMPAT LAYER
 echo "Enabling Linux compat layer..."
