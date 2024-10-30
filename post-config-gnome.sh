@@ -64,11 +64,12 @@ then
     pw groupmod wheel -m $user
     pw groupmod operator -m $user
     pw groupmod network -m $user
+    pw groupmod wheel -m $user
     echo ""
 
     ## ADDS USER TO SUDOERS
     echo "Adding $user to sudo"
-    sed -i '/%wheel/s/^#//g' /usr/local/etc/sudoers
+    echo '%wheel	ALL=(ALL)	ALL' >> /usr/local/etc/sudoers
     echo ""
 
 fi
@@ -78,6 +79,10 @@ echo "Enabling Linux compat layer..."
 echo ""
 kldload linux.ko
 sysrc linux_enable="YES"
+echo ""
+
+echo "Enabling mouse in Qemu VirtualMachine"
+echo 'utouch_load="YES"' >> /boot/loader.conf
 echo ""
 
 touch /etc/pf.conf

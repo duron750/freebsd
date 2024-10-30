@@ -47,3 +47,5 @@ xfce4-screenshooter-plugin
 xorg
 lightdm
 lightdm-gtk-greeter
+utouch-kmod
+xf86-input-evdev

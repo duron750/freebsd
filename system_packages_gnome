@@ -31,3 +31,5 @@ vlc
 wget
 xorg
 gnome
+utouch-kmod
+xf86-input-evdev
