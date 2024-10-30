@@ -18,12 +18,6 @@ echo ""
 pkg update && pkg upgrade -y
 echo ""
 
-## FETCH FreeBSD PORTS
-echo "Downloading Ports tree...";
-echo ""
-portsnap fetch auto
-echo ""
-
 ## COMPILE CPU OPTIMIZED APPLICATIONS
 touch /etc/make.conf
 CPUCORES=$(sysctl hw.ncpu | cut -d ":" -f2 | cut -d " " -f2)
