@@ -34,4 +34,4 @@ wget
 xorg
 gnome
 lightdm
-lightdm-gtw-greeter
+lightdm-gtk-greeter
