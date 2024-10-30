@@ -117,5 +117,5 @@ echo ""
 ## DONE, PLEASE RESTART
 echo "Installation done"
 echo "Don't forget to reboot your system after that"
-echo "To restore gnome settings run as user doconf load -f / < gnome_settings.conf"
+echo "To restore gnome settings run as user dconf load -f / < gnome_settings.conf"
 echo "BSD-GNOME by Wamphyre :)"
