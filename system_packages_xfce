@@ -45,3 +45,5 @@ xfce
 xfce4-pulseaudio-plugin
 xfce4-screenshooter-plugin
 xorg
+lightdm
+lightdm-gtk-greeter

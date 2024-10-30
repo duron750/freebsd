@@ -36,6 +36,7 @@ sysrc hostname="freebsd"
 sysrc moused_enable="YES"
 sysrc dbus_enable="YES"
 sysrc update_motd="NO"
+sysrc lightdm_enable="YES"
 echo ""
 
 ## CHANGE SLIM THEME TO FBSD
@@ -62,7 +63,6 @@ pw groupmod realtime -m $user
 pw groupmod wheel -m $user
 pw groupmod operator -m $user
 pw groupmod network -m $user
-pw groupmod webcamd -m $user
 echo ""
 
 ## ADDS USER TO SUDOERS

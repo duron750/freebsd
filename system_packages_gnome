@@ -33,5 +33,3 @@ vlc
 wget
 xorg
 gnome
-lightdm
-lightdm-gtk-greeter
