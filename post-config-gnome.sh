@@ -65,7 +65,6 @@ pw groupmod realtime -m $user
 pw groupmod wheel -m $user
 pw groupmod operator -m $user
 pw groupmod network -m $user
-pw groupmod webcamd -m $user
 echo ""
 
 ## ADDS USER TO SUDOERS
@@ -112,4 +111,5 @@ echo ""
 ## DONE, PLEASE RESTART
 echo "Installation done"
 echo "Don't forget to reboot your system after that"
-echo "BSD-XFCE by Wamphyre :)"
+echo "To restore gnome settings run as user doconf load -f / < gnome_settings.conf"
+echo "BSD-GNOME by Wamphyre :)"
