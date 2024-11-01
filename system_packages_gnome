@@ -36,3 +36,5 @@ xf86-input-evdev
 gnome-shell-extensions
 gnome-shell-extra-extensions
 chrome-gnome-shell
+utouch-kmod
+xf86-input-evdev
