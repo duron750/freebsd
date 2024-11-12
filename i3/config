@@ -26,10 +26,10 @@ bindsym $mod+Shift+k focus up
 bindsym $mod+Shift+l focus right
 
 # Alternatively use arrow keys.
-bindsym $mod+Left move left
-bindsym $mod+Down move down
-bindsym $mod+Up move up
-bindsym $mod+Right move right
+bindsym $mod+Shift+Left focus left
+bindsym $mod+Shift+Down focus down
+bindsym $mod+Shift+Up focus up
+bindsym $mod+Shift+Right focus right
 
 # Move focused window.
 #bindsym $mod+Shift+h move left
@@ -108,7 +108,7 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+q exec "rofi -combi-modi window,drun -show combi -modi combi"
 
 # Key combination for some of my favorite applications.
-bindsym $mod+Return exec "xterm"
+bindsym $mod+Return exec "xfce4-terminal"
 bindsym $mod+Shift+e exec "gedit"
 bindsym $mod+Shift+f exec "firefox"
 bindsym $mod+Shift+w exec "xrdesktop"
@@ -187,7 +187,7 @@ bar {
         urgent_workspace   #aa0000 #990000 #ffffff
     }
     position top
-    status_command ~/.config/i3/conky-i3bar.sh
+    status_command /usr/local/bin/i3status
 }
 
 ## Autostart applicatons ##
@@ -201,4 +201,4 @@ exec --no-startup-id "nitrogen --restore"
 # keyboard layout in this setup.
 # You switch between layouts by pressing "left CTRL + right CTRL".
 exec --no-startup-id "setxkbmap -layout us"
-exec xrandr --output default --mode 1280x720
+exec xrandr --output default --mode 1280x768
