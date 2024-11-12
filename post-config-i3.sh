@@ -18,8 +18,10 @@ echo "exec /usr/local/bin/i3" > /home/dan/.xinitrc
 echo "exec /usr/local/bin/i3" > /root/.xinitrc
 mkdir -p /home/dan/.config/i3
 mkdir -p /root/.config/i3
-cp /usr/local/etc/i3/config /home/dan/.config/i3
-cp /usr/local/etc/i3/config /root/.config/i3
+cp i3/config /home/dan/.config/i3
+cp i3/config /root/.config/i3
+cp i3/conky-i3bar.sh /home/dan./config/i3
+cp i3/conky-i3bar.sh /root/.config/i3
 chown -R dan /home/dan/.config
 chgrp -R dan /home/dan/.config
 chown dan /home/dan/.xinitrc
