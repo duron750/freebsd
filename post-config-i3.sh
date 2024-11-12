@@ -20,8 +20,8 @@ mkdir -p /home/dan/.config/i3
 mkdir -p /root/.config/i3
 cp /usr/local/etc/i3/config /home/dan/.config/i3
 cp /usr/local/etc/i3/config /root/.config/i3
-chown dan -R /home/dan/.config
-chgrp dan -R /home/dan/.config
+chown -R dan /home/dan/.config
+chgrp -R dan /home/dan/.config
 chown dan /home/dan/.xinitrc
 chgrp dan /home/dan/.xinitrc
 echo ""
