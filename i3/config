@@ -114,9 +114,8 @@ bindsym $mod+Shift+f exec "firefox"
 bindsym $mod+Shift+w exec "xrdesktop"
 bindsym $mod+Shift+z exec "filezilla"
 bindsym $mod+Shift+d exec "doublecmd"
-bindsym $mod+Shift+g exec "sdrpp"
+bindsym $mod+Shift+g exec "geany"
 bindsym $mod+Shift+v exec "pavucontrol"
-
 
 # Map the print key to gnome-screenshot.
 bindsym Print exec "gnome-screenshot -i"
@@ -201,4 +200,5 @@ exec --no-startup-id "nitrogen --restore"
 # keyboard layout in this setup.
 # You switch between layouts by pressing "left CTRL + right CTRL".
 exec --no-startup-id "setxkbmap -layout us"
-exec xrandr --output default --mode 1280x768
+exec "volumeicon"
+#exec xrandr --output default --mode 1280x768
