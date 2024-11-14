@@ -109,11 +109,11 @@ bindsym $mod+q exec "rofi -combi-modi window,drun -show combi -modi combi"
 
 # Key combination for some of my favorite applications.
 bindsym $mod+Return exec "xfce4-terminal"
-bindsym $mod+Shift+e exec "gedit"
+bindsym $mod+Shift+t exec "mousepad"
 bindsym $mod+Shift+f exec "firefox"
-bindsym $mod+Shift+w exec "xrdesktop"
-bindsym $mod+Shift+z exec "filezilla"
-bindsym $mod+Shift+d exec "doublecmd"
+bindsym $mod+Shift+e exec "thunar"
+bindsym $mod+Shift+p exec "rclone-browser"
+#bindsym $mod+Shift+d exec "doublecmd"
 bindsym $mod+Shift+g exec "geany"
 bindsym $mod+Shift+v exec "pavucontrol"
 
@@ -202,3 +202,5 @@ exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id "setxkbmap -layout us"
 exec "volumeicon"
 #exec xrandr --output default --mode 1280x768
+#mount google drive
+exec /home/dan/bin/googledrive.sh

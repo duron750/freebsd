@@ -3,15 +3,22 @@
 pkg install sudo neofetch htop zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
 pkg install i3 i3status i3lock dmenu
 pkg install utouch-kmod xf86-input-evdev
-pkg install rofi xfce4-terminal nitrogen gnome-screenshot qemu-guest-agent mate-backgrounds pavucontrol volumeicon
+pkg install rofi xfce4-terminal nitrogen gnome-screenshot qemu-guest-agent mate-backgrounds pavucontrol volumeicon mousepad thunar rclone rclone-browser iftop keepassxc
+pkg install lightdm lightdm-gtk-greeter
 
 echo "Configuring startup scripts. Make sure VGA driver is selected in Qemu"
 echo "dbus_enable=\"YES\"" >> /etc/rc.conf
 echo "hald_enable=\"YES\"" >> /etc/rc.conf
+echo "lightdm_enable=\"YES\"" >> /etc/rc.conf
 echo "qemu_guest_agent_enable=\"YES\"" >> /etc/rc.conf
+echo "vfs.usermount=1" >> /etc/sysctl.conf
 
 echo "Enabling mouse in Qemu VirtualMachine"
 echo 'utouch_load="YES"' >> /boot/loader.conf
+echo ""
+
+echo "Enable fusefs"
+echo "fusefs_load=\"YES\"" >> /boot/loader.conf
 echo ""
 
 echo "configuring local variables"
@@ -22,12 +29,13 @@ mkdir -p /root/.config/i3
 cp i3/config /home/dan/.config/i3
 cp i3/config /root/.config/i3
 cp zshrc /home/dan/.zshrc
-chown -R dan /home/dan/.config
-chgrp -R dan /home/dan/.config
-chown dan /home/dan/.xinitrc
-chgrp dan /home/dan/.xinitrc
-chown dan /home/dan/.zshrc
-chgrp dan /home/dan/.zshrc
+mkdir /home/dan/bin
+mkdir /home/dan/.config/rclone
+cp googledrive.sh /home/dan/bin/
+cp rclone.conf /home/dan/.config/rclone
+chown -R dan /home/dan/
+chgrp -R dan /home/dan/
+
 echo "%wheel ALL=(ALL:ALL) ALL" >> /usr/local/etc/sudoers
 echo ""
 echo "Please reboot computer, then login as user, startx and run nitrogen to setup wallpaper" 
