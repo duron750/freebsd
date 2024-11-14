@@ -30,9 +30,7 @@ cp i3/config /home/dan/.config/i3
 cp i3/config /root/.config/i3
 cp zshrc /home/dan/.zshrc
 mkdir /home/dan/bin
-mkdir /home/dan/.config/rclone
 cp googledrive.sh /home/dan/bin/
-cp rclone.conf /home/dan/.config/rclone
 chown -R dan /home/dan/
 chgrp -R dan /home/dan/
 
@@ -40,3 +38,4 @@ echo "%wheel ALL=(ALL:ALL) ALL" >> /usr/local/etc/sudoers
 echo ""
 echo "Please reboot computer, then login as user, startx and run nitrogen to setup wallpaper" 
 echo "Select preferences and add folder /usr/local/share/backgrounds/mate"
+echo "Copy rclone.conf from backup to ~/.config/rclone"
