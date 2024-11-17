@@ -113,7 +113,7 @@ bindsym $mod+Shift+t exec "mousepad"
 bindsym $mod+Shift+f exec "firefox"
 bindsym $mod+Shift+e exec "thunar"
 bindsym $mod+Shift+p exec "rclone-browser"
-#bindsym $mod+Shift+d exec "doublecmd"
+bindsym $mod+Shift+c exec "mate-calc"
 bindsym $mod+Shift+g exec "geany"
 bindsym $mod+Shift+v exec "pavucontrol"
 

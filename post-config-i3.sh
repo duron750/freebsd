@@ -3,7 +3,7 @@
 pkg install sudo neofetch htop zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
 pkg install i3 i3status i3lock dmenu
 pkg install utouch-kmod xf86-input-evdev
-pkg install rofi xfce4-terminal nitrogen gnome-screenshot qemu-guest-agent mate-backgrounds pavucontrol volumeicon mousepad thunar rclone rclone-browser iftop keepassxc
+pkg install rofi xfce4-terminal nitrogen gnome-screenshot qemu-guest-agent mate-backgrounds pavucontrol volumeicon mousepad thunar rclone rclone-browser iftop keepassxc evince-lite nsxiv mate-calc
 pkg install lightdm lightdm-gtk-greeter
 
 echo "Configuring startup scripts. Make sure VGA driver is selected in Qemu"
