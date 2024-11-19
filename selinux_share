@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo semanage fcontext -d -t virt_content_t "/home/dan/Downloads/qemu/freebsd/share(/.*)?"
+sudo semanage fcontext -a -t svirt_home_t   "/home/dan/Downloads/qemu/freebsd/share(/.*)?"
+sudo restorecon -vFR ~/Downloads/qemu/freebsd/share
