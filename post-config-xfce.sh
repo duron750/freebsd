@@ -101,7 +101,7 @@ sysrc jackd_enable="YES"
 sysrc jackd_user="$user"
 sysrc jackd_rtprio="YES"
 ## Change JACK /dev/dsp7 by your own interfaces
-sysrc jackd_args="-doss -r48000 -p256 -n1 -w16 --capture /dev/dsp0 --playback /dev/dsp0"
+#sysrc jackd_args="-doss -r48000 -p256 -n1 -w16 --capture /dev/dsp0 --playback /dev/dsp0"
 echo ""
 
 ## CLEAN CACHES AND AUTOREMOVES UNNECESARY FILES
