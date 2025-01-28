@@ -33,11 +33,7 @@ xargs pkg install -y < system_packages_xfce
 ## ENABLES BASIC SYSTEM SERVICES
 echo "Enabling basic services"
 sysrc hostname="freebsd"
-sysrc moused_enable="YES"
-sysrc dbus_enable="YES"
-sysrc update_motd="NO"
-sysrc lightdm_enable="YES"
-echo ""
+
 
 ## CHANGE SLIM THEME TO FBSD
 sed -i '' 's/current_theme       default/current_theme       fbsd/g' /usr/local/etc/slim.conf
@@ -48,11 +44,7 @@ echo ""
 if [ "$X" = "yes" ]
 then
     echo ; read -p "For what user? " user;
-#    touch /usr/home/$user/.xinitrc
-#    echo 'exec xfce4-session' >> /usr/home/$user/.xinitrc
-#    echo ""
-#    echo "$user enabled"
-#else fi
+else fi
 ## ADDS USER TO CORE GROUPS
     echo "Adding $user to video/realtime/wheel/operator groups"
     pw groupmod video -m $user
@@ -72,36 +64,34 @@ then
 fi
 
 ## ENABLES LINUX COMPAT LAYER
-echo "Enabling Linux compat layer..."
-echo ""
-kldload linux.ko
-sysrc linux_enable="YES"
-echo ""
+##echo "Enabling Linux compat layer..."
+##echo ""
+##kldload linux.ko
+##sysrc linux_enable="YES"
+##echo ""
 
 echo "Enabling mouse in Qemu VirtualMachine"
 echo 'utouch_load="YES"' >> /boot/loader.conf
 echo ""
 
-touch /etc/pf.conf
-echo 'block in all' >> /etc/pf.conf
-echo 'pass out all keep state' >> /etc/pf.conf
+##touch /etc/pf.conf
+##echo 'block in all' >> /etc/pf.conf
+##echo 'pass out all keep state' >> /etc/pf.conf
 
 ## CONFIGURES MORE CORE SYSTEM SERVICES
-echo "Enabling additional system services..."
+echo "Configuring startup scripts. Make sure VGA driver is selected in Qemu"
+echo "dbus_enable=\"YES\"" >> /etc/rc.conf
+echo "hald_enable=\"YES\"" >> /etc/rc.conf
+echo "lightdm_enable=\"YES\"" >> /etc/rc.conf
+echo "qemu_guest_agent_enable=\"YES\"" >> /etc/rc.conf
+echo "vfs.usermount=1" >> /etc/sysctl.conf
+
+echo "Enabling mouse in Qemu VirtualMachine"
+echo 'utouch_load="YES"' >> /boot/loader.conf
 echo ""
-sysrc pf_enable="YES"
-sysrc pf_rules="/etc/pf.conf" 
-sysrc pflog_enable="YES"
-sysrc pflog_logfile="/var/log/pflog"
-sysrc sendmail_enable="NO"
-sysrc sendmail_msp_queue_enable="NO"
-sysrc sendmail_outbound_enable="NO"
-sysrc sendmail_submit_enable="NO"
-sysrc jackd_enable="YES"
-sysrc jackd_user="$user"
-sysrc jackd_rtprio="YES"
-## Change JACK /dev/dsp7 by your own interfaces
-#sysrc jackd_args="-doss -r48000 -p256 -n1 -w16 --capture /dev/dsp0 --playback /dev/dsp0"
+
+echo "Enable fusefs"
+echo "fusefs_load=\"YES\"" >> /boot/loader.conf
 echo ""
 
 ## CLEAN CACHES AND AUTOREMOVES UNNECESARY FILES
