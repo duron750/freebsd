@@ -26,11 +26,11 @@ echo "CPUTYPE?=native" >> /etc/make.conf
 echo "MAKE_JOBS_NUMBER?=$CPUCORES" >> /etc/make.conf
 echo "OPTIONS_SET=OPTIMIZED_CFLAGS CPUFLAGS" >> /etc/make.conf
 
-
 pkg install sudo neofetch htop zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
-pkg install i3 i3status i3lock dmenu
+pkg install xorg
+pkg install -g 'mate-\*'
 pkg install utouch-kmod xf86-input-evdev
-pkg install rofi xfce4-terminal nitrogen gnome-screenshot qemu-guest-agent mate-backgrounds pavucontrol volumeicon mousepad thunar rclone rclone-browser iftop keepassxc evince-lite nsxiv mate-calc
+pkg install xfce4-terminal qemu-guest-agent mate-backgrounds pavucontrol volumeicon mousepad rclone rclone-browser iftop keepassxc evince-lite nsxiv mate-calc remmina openvpn openvpn-admin
 pkg install lightdm lightdm-gtk-greeter
 
 echo "Configuring startup scripts. Make sure VGA driver is selected in Qemu"
@@ -49,12 +49,6 @@ echo "fusefs_load=\"YES\"" >> /boot/loader.conf
 echo ""
 
 echo "configuring local variables"
-echo "exec /usr/local/bin/i3" > /home/dan/.xinitrc
-echo "exec /usr/local/bin/i3" > /root/.xinitrc
-mkdir -p /home/dan/.config/i3
-mkdir -p /root/.config/i3
-cp i3/config /home/dan/.config/i3
-cp i3/config /root/.config/i3
 cp zshrc /home/dan/.zshrc
 mkdir /home/dan/bin
 cp googledrive.sh /home/dan/bin/
