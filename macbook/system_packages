@@ -1,0 +1,22 @@
+sudo
+mc
+vim
+htop
+neofetch
+xorg
+drm-kmod
+xf86-video-intel
+libva-intel-driver
+mesa-libs mesa-dri
+mixer
+mixertui
+git
+wget
+firefox
+rclone
+rclone-browser
+pavucontrol
+openvpn
+openvpn-admin
+remmina
+geany
