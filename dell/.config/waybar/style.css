@@ -1,0 +1,182 @@
+/*
+ * Waybar Style: Sway Transparent
+ * Designed for maximum transparency on Sway (no blur support)
+ */
+
+* {
+    /* Main Font and Icon Font (Ensure these are installed) */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 1. MAIN BAR (Fully Transparent)                                            */
+/* -------------------------------------------------------------------------- */
+
+window#waybar {
+    /* Set Alpha (A) to 0.0 for full transparency */
+    background-color: rgba(43, 48, 59, 0.8); 
+
+    /* Remove border */
+    border: none;
+    
+    /* Slight overall rounding for the bar container itself */
+    border-radius: 12px;
+    
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. MODULE STYLING (Rounded Pill Shapes with Semi-Transparent Backgrounds)  */
+/* -------------------------------------------------------------------------- */
+
+/* Target all main modules for consistent styling */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    /* Give the module horizontal padding */
+    padding: 0 10px;
+    color: #ffffff;
+    
+    /* Rounded corners for the 'pill' shape */
+    border-radius: 99px; 
+    
+    /* Add a small margin to separate the rounded pills */
+    margin: 4px 3px 4px 3px; 
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. WORKSPACES (Special Styling)                                            */
+/* -------------------------------------------------------------------------- */
+
+#workspaces button {
+    padding: 0 8px;
+    background-color: transparent; 
+    color: #ffffff;
+    border-radius: 99px;
+    margin: 4px 1px 4px 1px;
+}
+
+#workspaces button:hover {
+    /* Slight visible highlight on hover */
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button.focused {
+    /* More visible highlight for the active workspace */
+    background-color: rgba(100, 114, 125, 0.5); /* Semi-transparent gray */
+    box-shadow: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. MODULE COLORS (Using Semi-Transparent Tints)                            */
+/* -------------------------------------------------------------------------- */
+
+/* CLOCK */
+#clock {
+    background-color: rgba(100, 114, 125, 0.4);
+}
+
+/* BATTERY */
+#battery {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #ffffff;
+}
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: rgba(38, 166, 91, 0.7); 
+}
+
+/* CRITICAL STATE ANIMATION */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+#battery.critical:not(.charging) {
+    background-color: rgba(245, 60, 60, 0.7);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* CPU & MEMORY */
+#cpu {
+    background-color: rgba(46, 204, 113, 0.4);
+}
+
+#memory {
+    background-color: rgba(155, 89, 182, 0.4);
+}
+
+/* NETWORK */
+#network {
+    background-color: rgba(41, 128, 185, 0.4);
+}
+
+#network.disconnected {
+    background-color: rgba(245, 60, 60, 0.7);
+}
+
+/* PULSE AUDIO */
+#pulseaudio {
+    background-color: rgba(241, 196, 15, 0.4);
+    color: #000000;
+}
+
+#pulseaudio.muted {
+    background-color: rgba(144, 177, 177, 0.4);
+    color: #2a5c45;
+}
+
+/* TRAY */
+#tray {
+    background-color: rgba(41, 128, 185, 0.4);
+}
+
+/* WINDOW TITLE (Default to the same transparent background) */
+#window {
+    background-color: rgba(100, 114, 125, 0.4); 
+    margin: 4px;
+    border-radius: 99px;
+    padding: 0 10px;
+}
+
+/* Cleanup for various custom/other modules */
+#temperature,
+#backlight,
+#disk,
+#wireplumber,
+#power-profiles-daemon,
+#idle_inhibitor,
+#custom-media,
+#mpd {
+    background-color: rgba(180, 180, 180, 0.4);
+}
+
+/* Left/Right margin cleanup */
+.modules-left > widget:first-child > #workspaces { margin-left: 4px; }
+.modules-right > widget:last-child > #workspaces { margin-right: 4px; }

@@ -1,0 +1,7 @@
+#/bin/sh
+
+# Update the repo first
+sudo pkg update
+
+# Install the list
+xargs -o sudo pkg install < my_packages.txt

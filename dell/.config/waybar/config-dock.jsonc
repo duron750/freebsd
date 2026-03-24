@@ -1,0 +1,79 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 40,
+
+    // ** ADD THIS LINE to enable autohide **
+    //"autohide": true,
+
+    // ** ADD/SET THIS LINE so windows can occupy the bar's space **
+    //"exclusive": false,
+    
+    // --- END: MODIFIED FOR AUTOHIDE ---
+    // =======================================================
+    // 1. CHEAT SHEET MODULE DEFINITION
+    // =======================================================
+    "custom/cheatsheet": {
+        "format": "\uf128",
+        "interval": 99999, 
+        "tooltip": true,
+        // *** ADD THE ICON CODE \uf013 HERE ***
+        "tooltip-format": "\uf013 <b># SWAY CHEAT SHEET</b>\n--------------------\nMOD + Enter | Terminal\nMOD + d | App Launcher (wofi)\nMOD + Shift + q | Kill Window\nMOD + Shift + c | Reload Config\nMOD + Shift + r | Restart Sway\nMOD + 1/2/3 | Switch Workspace\nMOD + Shift + 1/2/3 | Move window to another workspace\nMOD + Left/Right | Focus Left/Right\nMOD + Shift + Space | Toggle Flating Mode\nMOD + v/h | Split Window V/H\nMOD + s | Toggle Stacking/Tabbed/Default\n\n<b># VIM CHEAT SHEET</b>\n-----------------\n:%s/[search]/[replace]/g | replace text\n/[search]\t\t| search text\nn/N\t\t\t| search down/up\n/v[text]/\t\t| search inverse\n:[line]\t\t\t| GOTO line number\n:E\t\t\t| start file explorer\n:term\t\t\t| start terminal in horizontal split\n:sp [filename]\t| open a new file in split view\nCtrl + W\t\t| move between split views\nh,j,k,l\t\t\t| move 1 character L, D, U, R\n0, &amp; | move to start/end of the line\ngg, G\t\t\t| move to start/end of the document\nx\t\t\t| delete character\ndd\t\t\t| delete line\nyy\t\t\t| copy text\np\t\t\t| paste text\nu, Ctr+R\t\t| undo, redo\na, i\t\t\t| append, insert\no\t\t\t| new line\n:w\t\t\t| save file\n~\t\t\t| switch case\n:sp filename\t| open file horizontal split\n:vs filename\t| open file vertical split\n:tabnew filename| open file in tab\ngt, gT\t\t\t| move next/previous tab",
+        "on-click": "swaymsg mode 'default'"
+    },
+
+    "modules-center": [
+        "custom/cheatsheet", // <-- INSERTED FIRST
+        "custom/browser",
+        "custom/terminal",
+        "custom/files",
+        "custom/editor",
+        "custom/remmina",
+        "custom/keepassxc",
+        "custom/calculator"
+    ],
+
+    // ... (Your application launcher definitions follow) ...
+    
+    "custom/browser": {
+        "format": "\uf0ac", // Globe Icon
+        "tooltip": "Vivaldi Browser",
+        "on-click": "vivaldi-stable"
+    },
+    
+    "custom/terminal": {
+        "format": "\uf120", 
+        "tooltip": "Foot Terminal", 
+        "on-click": "foot"
+    },
+    
+    "custom/files": {
+        "format": "\uf07b", 
+        "tooltip": "Thunar Files (File Manager)", 
+        "on-click": "thunar"
+    },
+    
+    "custom/editor": {
+        "format": "\uf15c", 
+        "tooltip": "File Editor",
+        "on-click": "mousepad"
+    },
+
+    "custom/remmina": {
+        "format": "\uf108", 
+        "tooltip": "Remmina (Remote Desktop)",
+        "on-click": "remmina"
+    },
+    
+    "custom/keepassxc": {
+        "format": "\uf084", 
+        "tooltip": "KeePassXC (Password Manager)",
+        "on-click": "keepassxc"
+    },
+
+    "custom/calculator": {
+        "format": "\uf1ec", 
+        "tooltip": "Calculator",
+        "on-click": "gnome-calculator"
+    }
+}
