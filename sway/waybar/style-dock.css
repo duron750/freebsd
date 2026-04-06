@@ -1,0 +1,25 @@
+/* ~/.config/waybar/style-dock.css (FINAL CLEANED) */
+
+* {
+    /* Apply font-family globally */
+    font-family: "Fira Code", "Roboto", sans-serif;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+/* ALL LAUNCHERS use the same style, including the bright white color */
+#custom-cheatsheet, #custom-browser, #custom-terminal, #custom-files, #custom-editor, #custom-remmina, #custom-keepassxc, #custom-calculator {
+    padding: 5px 15px;
+    font-size: 24px;
+    color: #FFFFFF; /* FORCED WHITE COLOR */
+    min-width: 30px;
+}
+
+/* Hover style */
+#custom-browser:hover, #custom-terminal:hover, #custom-files:hover, #custom-editor:hover, #custom-remmina:hover, #custom-keepassxc:hover, #custom-calculator:hover, #custom-cheatsheet:hover {
+    background-color: #2ECC71;
+}
