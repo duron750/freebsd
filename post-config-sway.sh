@@ -25,7 +25,8 @@ CPUCORES=$(sysctl hw.ncpu | cut -d ":" -f2 | cut -d " " -f2)
 echo "CPUTYPE?=native" >> /etc/make.conf
 echo "MAKE_JOBS_NUMBER?=$CPUCORES" >> /etc/make.conf
 echo "OPTIONS_SET=OPTIMIZED_CFLAGS CPUFLAGS" >> /etc/make.conf
-
+echo "BATCH=YES" >> /etc/make.conf
+echo "OPTIONS_UNSET = DOCS EXAMPLES" >> /etc/make.conf
 
 pkg install fastfetch htop zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
 pkg install wayland sway swayidle swaylock-effects noto-basic seatd
