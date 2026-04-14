@@ -31,14 +31,16 @@ echo "OPTIONS_UNSET = DOCS EXAMPLES" >> /etc/make.conf
 pkg install fastfetch htop zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
 pkg install wayland sway swayidle swaylock-effects noto-basic seatd
 pkg install waybar mako pipewire wireplumber foot nautilus remmina keepassxc gnome-calculator polkit-gnome gnome-keyring rclone rclone-browser pavucontrol
-pkg install sddm
+pkg install ly
+
+echo "Ly:\
+  :lo=/usr/local/bin/ly:\
+  :al=root:" >> /etc/gettytab
 
 echo "Configuring startup scripts. Make sure VGA driver is selected in Qemu"
 echo "seatd_enable="YES""" >> /etc/rc.conf
 echo "dbus_enable=\"YES\"" >> /etc/rc.conf
 echo "hald_enable=\"YES\"" >> /etc/rc.conf
-echo "sddm_enable=\"YES\"" >> /etc/rc.conf
-echo "qemu_guest_agent_enable=\"YES\"" >> /etc/rc.conf
 echo "vfs.usermount=1" >> /etc/sysctl.conf
 
 echo "Enabling mouse in Qemu VirtualMachine"
